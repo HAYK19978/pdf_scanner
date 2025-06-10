@@ -25,6 +25,9 @@ dependencies:
   rate_my_app: ^2.3.1
   # The ProImageEditor is a Flutter widget designed for image editing within your application.
   pro_image_editor: ^9.11.2
+  # For showing pdf files
+  cunning_document_scanner: ^1.2.3
+  flutter_dynamic_icon: ^2.1.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
