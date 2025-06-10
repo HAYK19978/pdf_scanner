@@ -27,13 +27,23 @@ dependencies:
   pro_image_editor: ^9.11.2
   # For showing pdf files
   cunning_document_scanner: ^1.2.3
+  # For crreating icons
   flutter_dynamic_icon: ^2.1.0
+  # For showing native splash screen
+  flutter_native_splash: ^2.4.6
 
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icons/Icon_1028.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/icons/icon_1028.png"
+  android: true
+  ios: true
+  fullscreen: true
 
 dev_dependencies:
   flutter_test:
