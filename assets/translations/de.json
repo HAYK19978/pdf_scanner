@@ -1,3 +1,8 @@
 {
-    "hi": "Hello"
+    "hi": "Hello",
+    "pleaseWait": "One moment, please wait...",
+    "search": "Search...",
+    "documents": "Documents",
+    "no_documents": "No documents found",
+    "tap_to_scan": "Tap the baton below to scan or convert to PDF"  
 }

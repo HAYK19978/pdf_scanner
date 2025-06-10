@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_scanner/src/core/presentation/custom_scaffold.dart';
 
 class OnboardingPage extends StatelessWidget {
   final PageController _controller = PageController();
@@ -21,7 +22,7 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return CustomScafold(
       body: PageView.builder(
         controller: _controller,
         itemCount: pages.length,

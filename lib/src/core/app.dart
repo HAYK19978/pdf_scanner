@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:pdf_scanner/src/core/l10n/codegen_loader.g.dart';
 import 'package:pdf_scanner/src/core/router/router.dart';
 
 class App extends StatelessWidget {
@@ -18,11 +19,18 @@ class App extends StatelessWidget {
         Locale('it', 'IT'),
       ],
       path: 'assets/translations',
-      fallbackLocale: const Locale('en', 'US'),
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        routerConfig: router,
-      ),
+      useOnlyLangCode: true,
+      assetLoader: const CodegenLoader(),
+      fallbackLocale: const Locale('en'),
+      child: Builder(builder: (BuildContext context) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routerConfig: router,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+        );
+      }),
     );
   }
 }

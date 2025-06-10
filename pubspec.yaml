@@ -21,6 +21,10 @@ dependencies:
   google_fonts: ^6.2.1
   # For translation support
   easy_localization: ^3.0.7+1
+  # For showing rate app window
+  rate_my_app: ^2.3.1
+  # The ProImageEditor is a Flutter widget designed for image editing within your application.
+  pro_image_editor: ^9.11.2
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -35,9 +39,17 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: SF Pro
+      fonts:
+        - asset: assets/fonts/San-Francisco-Pro-Fonts/SF-Pro-Display-Regular.otf
+        - asset: assets/fonts/San-Francisco-Pro-Fonts/SF-Pro-Text-Bold.otf
+          weight: 500
 
   assets:
+    - lib/src/core/l10n/codegen_loader.g.dart
     - assets/images/logo2.png
     - assets/images/
     - assets/icons/
-    - assets/fonts/
+    - assets/fonts/San-Francisco-Pro-Fonts/SF-Pro-Display-Regular.otf
+    - assets/fonts/San-Francisco-Pro-Fonts/SF-Pro-Text-Bold.otf
