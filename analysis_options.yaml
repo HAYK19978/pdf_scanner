@@ -1,0 +1,13 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Add or remove rules as needed
+    # https://dart.dev/tools/linter-rules
+    prefer_single_quotes: true
+    avoid_print: true
+    unnecessary_string_interpolations: true
+    prefer_const_constructors: true
+    prefer_final_locals: true
+    always_specify_types: true
+    avoid_unnecessary_containers: true
