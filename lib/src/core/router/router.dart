@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pdf_scanner/src/features/onboarding/onb.dart';
+import 'package:pdf_scanner/src/features/onboarding/onboarding.dart';
 
-/// The route configuration.
-// final GoRouter _router = GoRouter(
-//   routes: <RouteBase>[
-//     GoRoute(
-//       path: '/',
-//       builder: (BuildContext context, GoRouterState state) {
-//         return const HomeScreen();
-//       },
-//       routes: <RouteBase>[
-//         GoRoute(
-//           path: 'details',
-//           builder: (BuildContext context, GoRouterState state) {
-//             return const DetailsScreen();
-//           },
-//         ),
-//       ],
-//     ),
-//   ],
-// );
+final GoRouter router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return OnboardingPage();
+      },
+    ),
+    GoRoute(
+      path: '/onboarding',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Onboarding();
+      },
+    ),
+  ],
+);
