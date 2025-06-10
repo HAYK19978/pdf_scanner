@@ -1,6 +1,6 @@
 {
     "hi": "Hello",
-    "pleaseWait": "One moment, please wait...",
+    "please_wait": "One moment, please wait...",
     "search": "Search...",
     "documents": "Documents",
     "no_documents": "No documents found",
