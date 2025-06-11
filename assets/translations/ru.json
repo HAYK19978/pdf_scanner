@@ -8,6 +8,11 @@
     "{pdf_scanner}_pdf": "PDF",
     "{pdf_scanner}_scanner": "Scanner",
     "{pdf_scanner}_get_unlimited_scans":"Get unlimited scans, advanced editing, and an ad-free experience",
-    "{pdf_scanner}_start_free_trial":"Start Free Trial"
+    "{pdf_scanner}_start_free_trial":"Start Free Trial",
+    "{pdf_scanner}_restore":"Restore",
+    "{pdf_scanner}_privacy":"Privacy",
+    "{pdf_scanner}_terms":"Terms",
+    "{pdf_scanner}_week": "Week",
+    "{pdf_scanner}_year": "Year"
   }
   

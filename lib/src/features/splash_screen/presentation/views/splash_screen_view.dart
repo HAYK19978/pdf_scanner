@@ -1,7 +1,10 @@
+// ignore_for_file: always_specify_types, use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:pdf_scanner/src/core/mixins/after_layout_mixin.dart';
 import 'package:pdf_scanner/src/core/router/router.dart';
 import 'package:pdf_scanner/src/core/services/is_first_launch.dart';
+import 'package:pdf_scanner/src/core/services/rate_my_app_service.dart';
 import 'package:pdf_scanner/src/core/utils/image_paths.dart';
 
 class SplashScreenView extends StatefulWidget {
@@ -12,18 +15,17 @@ class SplashScreenView extends StatefulWidget {
 }
 
 class _SplashScreenViewState extends State<SplashScreenView>
-    // ignore: always_specify_types
-    with
-        // ignore: always_specify_types
-        AfterLayoutMixin {
+    with AfterLayoutMixin {
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
-    // ignore: always_specify_types
     await Future.delayed(const Duration(seconds: 2));
     final bool ifFirstOpening = await isFirstLaunch();
     if (ifFirstOpening) {
       router.go('/onboarding');
     } else {
+      Future.delayed(const Duration(seconds: 2), () {
+        RateMyAppService.maybeShowRateDialog(context);
+      });
       router.go('/noDocuments');
     }
   }
