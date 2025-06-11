@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pdf_scanner/src/core/utils/image_paths/image_paths.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pdf_scanner/src/core/utils/image_paths.dart';
 
 class CustomScafold extends StatelessWidget {
   const CustomScafold({
@@ -14,26 +15,22 @@ class CustomScafold extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           body,
-          Positioned(
-              width: MediaQuery.of(context).size.width,
-              right: 0,
-              top: 88,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 28,
+          Padding(
+            padding: EdgeInsets.only(
+              left: 28.w,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Image.asset(
+                  ImagePaths.frame70,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Image.asset(
-                      ImagePaths.frame70,
-                    ),
-                    Image.asset(
-                      ImagePaths.scaffoldBg,
-                    ),
-                  ],
+                Image.asset(
+                  ImagePaths.scaffoldBg,
                 ),
-              )),
+              ],
+            ),
+          ),
         ],
       ),
     );

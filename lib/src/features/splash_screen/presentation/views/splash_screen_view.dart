@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pdf_scanner/src/core/mixins/after_layout_mixin.dart';
 import 'package:pdf_scanner/src/core/router/router.dart';
 import 'package:pdf_scanner/src/core/services/is_first_launch.dart';
-import 'package:pdf_scanner/src/core/utils/image_paths/image_paths.dart';
+import 'package:pdf_scanner/src/core/utils/image_paths.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});

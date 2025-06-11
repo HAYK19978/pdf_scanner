@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pdf_scanner/src/core/l10n/codegen_loader.g.dart';
 import 'package:pdf_scanner/src/core/router/router.dart';
 
@@ -23,13 +24,17 @@ class App extends StatelessWidget {
       assetLoader: const CodegenLoader(),
       fallbackLocale: const Locale('en'),
       child: Builder(builder: (BuildContext context) {
-        return MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          routerConfig: router,
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-        );
+        return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            builder: (_, __) {
+              return MaterialApp.router(
+                debugShowCheckedModeBanner: false,
+                routerConfig: router,
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                locale: context.locale,
+              );
+            });
       }),
     );
   }

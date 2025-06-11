@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pdf_scanner/src/core/utils/image_paths/image_paths.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pdf_scanner/src/core/utils/image_paths.dart';
 
 class NoDocumentsView extends StatelessWidget {
   const NoDocumentsView({super.key});
@@ -41,14 +42,14 @@ class NoDocumentsView extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             // Документы
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
-              child: Text(
-                'Documents',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-            ),
-            const SizedBox(height: 16),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 24.w),
+            //   child: Text(
+            //     'Documents',
+            //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            //   ),
+            // ),
+            // SizedBox(height: 16.h),
             // Карточка "Нет документов"
             Expanded(
               child: Padding(
@@ -61,7 +62,16 @@ class NoDocumentsView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Documents',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                      ),
                       Image.asset(
                         'assets/images/no_docs.png',
                         height: 120,
@@ -89,7 +99,6 @@ class NoDocumentsView extends StatelessWidget {
           ],
         ),
       ),
-      // Кнопка сканирования
       floatingActionButton: Container(
         margin: const EdgeInsets.only(bottom: 16),
         width: 80,
@@ -98,7 +107,7 @@ class NoDocumentsView extends StatelessWidget {
           backgroundColor: Colors.red,
           shape: const CircleBorder(),
           onPressed: () {},
-          child: Image.asset(ImagePaths.pdfIcon, width: 82, height: 82),
+          child: Image.asset(ImagePaths.btn, width: 82, height: 82),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

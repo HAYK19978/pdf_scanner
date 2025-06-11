@@ -31,7 +31,10 @@ dependencies:
   flutter_dynamic_icon: ^2.1.0
   # For showing native splash screen
   flutter_native_splash: ^2.4.6
+  # For cache management
   shared_preferences: ^2.5.3
+  # For responsive design
+  flutter_screenutil: ^5.9.3
 
 flutter_launcher_icons:
   android: "launcher_icon"

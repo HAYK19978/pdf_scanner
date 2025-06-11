@@ -8,4 +8,8 @@ class ImagePaths {
   static const String galleryIcon = 'assets/images/gallery_icon.png';
   static const String pdfIcon = 'assets/images/pdf_icon.png';
   static const String docIcon = 'assets/images/doc_icon.png';
+  static const String btn = 'assets/images/btn.png';
+  static const String btnSort = 'assets/images/btn_sort.png';
+  static const String lottie = 'assets/images/lottie.png';
+  static const String rocket = 'assets/images/rocket.png';
 }
