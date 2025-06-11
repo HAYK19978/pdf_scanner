@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pdf_scanner/src/core/presentation/custom_scaffold.dart';
 
-class OnboardingPage extends StatelessWidget {
+class OnboardingView extends StatelessWidget {
   final PageController _controller = PageController();
 
   // ignore: library_private_types_in_public_api
@@ -18,7 +18,7 @@ class OnboardingPage extends StatelessWidget {
     ),
   ];
 
-  OnboardingPage({super.key});
+  OnboardingView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +26,14 @@ class OnboardingPage extends StatelessWidget {
       body: PageView.builder(
         controller: _controller,
         itemCount: pages.length,
-        itemBuilder: (context, index) {
-          final page = pages[index];
+        itemBuilder: (BuildContext context, int index) {
+          final _OnboardingData page = pages[index];
           return Padding(
             padding: const EdgeInsets.all(24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  page.imagePath,
-                  height: 300,
-                ),
-                const SizedBox(height: 40),
+              children: <Widget>[
+                const SizedBox(height: 31),
                 Text(
                   page.title,
                   style: const TextStyle(
@@ -54,6 +50,10 @@ class OnboardingPage extends StatelessWidget {
                     fontSize: 16,
                     color: Colors.grey,
                   ),
+                ),
+                Image.asset(
+                  page.imagePath,
+                  height: 300,
                 ),
                 const Spacer(),
                 ElevatedButton(
