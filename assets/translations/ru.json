@@ -13,6 +13,15 @@
     "{pdf_scanner}_privacy":"Privacy",
     "{pdf_scanner}_terms":"Terms",
     "{pdf_scanner}_week": "Week",
-    "{pdf_scanner}_year": "Year"
+    "{pdf_scanner}_year": "Year",
+    "{pdf_scanner}_save": "Save",
+    "{pdf_scanner}_rename": "Rename",
+    "{pdf_scanner}_print": "Print",
+    "{pdf_scanner}_share": "Share",
+    "{pdf_scanner}_delete": "Delete",
+    "{pdf_scanner}_cancel": "Cancel",
+    "{pdf_scanner}_do_you_like_app": "Enjoying Mobile App?",
+    "{pdf_scanner}_tap_to_rate": "Tap a star to rate it on the App Store.",
+    "{pdf_scanner}_not_now": "Not now"
   }
   

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_scanner/src/features/scanner/presentation/widgets/document_list_view.dart';
 
 class DocumentsView extends StatelessWidget {
   const DocumentsView({super.key});
@@ -14,43 +15,6 @@ class DocumentsView extends StatelessWidget {
         centerTitle: false,
       ),
       body: const DocumentListView(),
-    );
-  }
-}
-
-class DocumentListView extends StatelessWidget {
-  const DocumentListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SearchBar(),
-          const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Documents',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              Icon(Icons.swap_vert, color: Colors.red),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 3,
-              itemBuilder: (context, index) => DocumentTile(
-                title: 'Document 1',
-                date: '2025-02-12',
-                pageCount: 1,
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

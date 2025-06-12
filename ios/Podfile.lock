@@ -11,23 +11,9 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.3.0):
     - Flutter
-  - purchases_flutter (8.10.1):
-    - Flutter
-    - PurchasesHybridCommon (= 13.35.0)
-  - purchases_ui_flutter (8.10.1):
-    - Flutter
-    - PurchasesHybridCommonUI (= 13.35.0)
-  - PurchasesHybridCommon (13.35.0):
-    - RevenueCat (= 5.27.1)
-  - PurchasesHybridCommonUI (13.35.0):
-    - PurchasesHybridCommon (= 13.35.0)
-    - RevenueCatUI (= 5.27.1)
   - rate_my_app (2.3.0):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.27.1)
-  - RevenueCatUI (5.27.1):
-    - RevenueCat (= 5.27.1)
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -39,17 +25,8 @@ DEPENDENCIES:
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
-  - purchases_flutter (from `.symlinks/plugins/purchases_flutter/ios`)
-  - purchases_ui_flutter (from `.symlinks/plugins/purchases_ui_flutter/ios`)
   - rate_my_app (from `.symlinks/plugins/rate_my_app/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
-
-SPEC REPOS:
-  trunk:
-    - PurchasesHybridCommon
-    - PurchasesHybridCommonUI
-    - RevenueCat
-    - RevenueCatUI
 
 EXTERNAL SOURCES:
   cunning_document_scanner:
@@ -64,10 +41,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
-  purchases_flutter:
-    :path: ".symlinks/plugins/purchases_flutter/ios"
-  purchases_ui_flutter:
-    :path: ".symlinks/plugins/purchases_ui_flutter/ios"
   rate_my_app:
     :path: ".symlinks/plugins/rate_my_app/darwin"
   shared_preferences_foundation:
@@ -80,13 +53,7 @@ SPEC CHECKSUMS:
   flutter_native_splash: c32d145d68aeda5502d5f543ee38c192065986cf
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
-  purchases_flutter: 7cf9cb2f7608e31c3d7db9a6896e12076655b38b
-  purchases_ui_flutter: 31586be2feec6feb51a8f9f06be5d528e035de5e
-  PurchasesHybridCommon: 18288b8ad932cfeb5f142f592d5c65e626a35770
-  PurchasesHybridCommonUI: f64a0ff31581e7642331b4b933d90775bca5d1e2
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
-  RevenueCat: 87171c9f2412778354c8523f5625d1fece2560a5
-  RevenueCatUI: 938bf0fb4bc9b8694aec7039decf3c4f3140cd49
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
 
 PODFILE CHECKSUM: 3c63482e143d1b91d2d2560aee9fb04ecc74ac7e
