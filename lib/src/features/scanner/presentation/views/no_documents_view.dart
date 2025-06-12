@@ -1,5 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pdf_scanner/src/core/utils/image_paths.dart';
+import 'package:pdf_scanner/src/features/scanner/presentation/widgets/logo.dart';
 import 'package:pdf_scanner/src/features/scanner/presentation/widgets/scan_button.dart';
 
 class NoDocumentsView extends StatelessWidget {
@@ -20,21 +23,15 @@ class NoDocumentsView extends StatelessWidget {
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 50),
+              children: <Widget>[
+                SizedBox(height: 50.h),
+                const Logo(),
+                SizedBox(height: 24.h),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Image.asset(
-                    ImagePaths.logo2Red,
-                    height: 40,
-                  ),
-                ),
-                const SizedBox(height: 24),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: 'Search...',
+                      hintText: '{pdf_scanner}_search'.tr(),
                       suffixIcon: const Icon(Icons.search),
                       filled: true,
                       fillColor: Colors.white,
@@ -46,51 +43,51 @@ class NoDocumentsView extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(24),
+                    padding: EdgeInsets.all(24.w),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(24.w),
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        const Align(
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            'Documents',
-                            style: TextStyle(
+                            '{pdf_scanner}_documents'.tr(),
+                            style: const TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w600),
                           ),
                         ),
                         Image.asset(
-                          'assets/images/no_docs.png',
+                          ImagePaths.noDocs,
                           height: 203,
                         ),
-                        const SizedBox(height: 16),
-                        const Text(
-                          'No documents found',
-                          style: TextStyle(
+                        SizedBox(height: 16.h),
+                        Text(
+                          '{pdf_scanner}_no_documents'.tr(),
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.black87,
                           ),
                         ),
                         const SizedBox(height: 8),
-                        const Text(
-                          'Tap the baton below to scan\nor convert to PDF',
-                          style: TextStyle(color: Colors.black54),
+                        Text(
+                          '{pdf_scanner}_tap_to_scan'.tr(),
+                          style: const TextStyle(color: Colors.black54),
                           textAlign: TextAlign.center,
                         ),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(height: 100), // Чтобы FAB не перекрывал
+                SizedBox(height: 100.h), // Чтобы FAB не перекрывал
               ],
             ),
           ),

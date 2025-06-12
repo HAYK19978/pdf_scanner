@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CurrentDocument extends StatelessWidget {
-  const CurrentDocument({super.key});
+class CurrentDocumentView extends StatelessWidget {
+  const CurrentDocumentView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
-          children: const [
+          children: <Widget>[
             DocumentPreviewAppBar(),
             Expanded(child: DocumentPageView()),
             DocumentThumbnailBar(),
