@@ -1,6 +1,8 @@
 PODS:
   - cunning_document_scanner (1.0.0):
     - Flutter
+  - doc_scan_flutter (1.0.0):
+    - Flutter
   - Flutter (1.0.0)
   - flutter_dynamic_icon (0.0.1):
     - Flutter
@@ -20,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - cunning_document_scanner (from `.symlinks/plugins/cunning_document_scanner/ios`)
+  - doc_scan_flutter (from `.symlinks/plugins/doc_scan_flutter/ios`)
   - Flutter (from `Flutter`)
   - flutter_dynamic_icon (from `.symlinks/plugins/flutter_dynamic_icon/ios`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
@@ -31,6 +34,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   cunning_document_scanner:
     :path: ".symlinks/plugins/cunning_document_scanner/ios"
+  doc_scan_flutter:
+    :path: ".symlinks/plugins/doc_scan_flutter/ios"
   Flutter:
     :path: Flutter
   flutter_dynamic_icon:
@@ -48,6 +53,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   cunning_document_scanner: 43a2bda11ef6a33fd68766b287ed056b4caf6a06
+  doc_scan_flutter: d0271acc6b4e826e9498352c9f10f39408addf8b
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_dynamic_icon: 9b73b8d673f589e913991cc025c007823c59ed19
   flutter_native_splash: c32d145d68aeda5502d5f543ee38c192065986cf
@@ -56,6 +62,6 @@ SPEC CHECKSUMS:
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
 
-PODFILE CHECKSUM: 3c63482e143d1b91d2d2560aee9fb04ecc74ac7e
+PODFILE CHECKSUM: 7b78435c1e8597526c6194f3ecf684e2a27f7774
 
 COCOAPODS: 1.16.2
