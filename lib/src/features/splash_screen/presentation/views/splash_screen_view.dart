@@ -26,7 +26,7 @@ class _SplashScreenViewState extends State<SplashScreenView>
       Future.delayed(const Duration(seconds: 2), () {
         RateMyAppService.maybeShowRateDialog(context);
       });
-      router.go('/noDocuments');
+      router.go('/documents');
     }
   }
 

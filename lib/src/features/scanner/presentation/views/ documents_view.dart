@@ -1,119 +1,106 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:pdf_scanner/src/features/scanner/presentation/widgets/document_list_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pdf_scanner/src/core/utils/image_paths.dart';
+import 'package:pdf_scanner/src/features/scanner/presentation/widgets/logo.dart';
+import 'package:pdf_scanner/src/features/scanner/presentation/widgets/scan_button.dart';
 
 class DocumentsView extends StatelessWidget {
   const DocumentsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text('PixelScan', style: TextStyle(color: Colors.black)),
-        centerTitle: false,
-      ),
-      body: const DocumentListView(),
-    );
-  }
-}
-
-class SearchBar extends StatelessWidget {
-  const SearchBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: const TextField(
-        decoration: InputDecoration(
-          hintText: 'Search...',
-          border: InputBorder.none,
-          icon: Icon(Icons.search),
-        ),
-      ),
-    );
-  }
-}
-
-class DocumentTile extends StatelessWidget {
-  final String title;
-  final String date;
-  final int pageCount;
-
-  const DocumentTile(
-      {super.key,
-      required this.title,
-      required this.date,
-      required this.pageCount});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      child: ListTile(
-        leading:
-            Image.asset('assets/images/doc_thumb.png', width: 40, height: 50),
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text('$pageCount | $date'),
-        trailing: IconButton(
-          icon: const Icon(Icons.more_vert),
-          onPressed: () => _showActions(context),
-        ),
-      ),
-    );
-  }
-
-  void _showActions(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) => const DocumentActionSheet(),
-    );
-  }
-}
-
-class DocumentActionSheet extends StatelessWidget {
-  const DocumentActionSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _buildAction(context, 'Rename', Icons.edit, Colors.blue, () {}),
-          _buildAction(context, 'Print', Icons.print, Colors.blue, () {}),
-          _buildAction(context, 'Share', Icons.share, Colors.blue, () {}),
-          _buildAction(context, 'Delete', Icons.delete, Colors.red, () {}),
-          const Divider(),
-          ListTile(
-            title: const Center(
-                child: Text('Cancel', style: TextStyle(color: Colors.black))),
-            onTap: () => Navigator.pop(context),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget _buildAction(BuildContext context, String title, IconData icon,
-      Color color, VoidCallback onTap) {
-    return ListTile(
-      leading: Icon(icon, color: color),
-      title: Text(title, style: TextStyle(color: color)),
+    return GestureDetector(
       onTap: () {
-        Navigator.pop(context);
-        onTap();
+        FocusScope.of(context).unfocus();
       },
+      child: Scaffold(
+        resizeToAvoidBottomInset: true,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 50.h),
+                const Logo(),
+                SizedBox(height: 24.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: '{pdf_scanner}_search'.tr(),
+                      suffixIcon: const Icon(Icons.search),
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: const EdgeInsets.all(16),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(24.w),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(24.w),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '{pdf_scanner}_documents'.tr(),
+                            style: const TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        Image.asset(
+                          ImagePaths.noDocs,
+                          height: 203,
+                        ),
+                        SizedBox(height: 16.h),
+                        Text(
+                          '{pdf_scanner}_no_documents'.tr(),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          '{pdf_scanner}_tap_to_scan'.tr(),
+                          style: const TextStyle(color: Colors.black54),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 100.h), // Чтобы FAB не перекрывал
+              ],
+            ),
+          ),
+        ),
+        floatingActionButton: ScanButton(
+          onTap: onScan(),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      ),
     );
+  }
+
+  onScan() {
+    print('object');
   }
 }
