@@ -22,5 +22,9 @@
   "{pdf_scanner}_cancel": "Abbrechen",
   "{pdf_scanner}_do_you_like_app": "Gefällt Ihnen die App?",
   "{pdf_scanner}_tap_to_rate": "Tippen Sie auf einen Stern, um sie im App Store zu bewerten.",
-  "{pdf_scanner}_not_now": "Jetzt nicht"
+  "{pdf_scanner}_not_now": "Jetzt nicht",   
+  "{pdf_scanner}_pdf_scanner": "PDF-Scanner",
+  "{pdf_scanner}_easaly_scan": "Dokumente einfach scannen\noder in PDF umwandeln",
+  "{pdf_scanner}_rate_us": "Bewerten Sie uns",
+  "{pdf_scanner}_help_us": "Helfen Sie uns, mit\nIhrem Feedback besser zu werden"
 }

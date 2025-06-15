@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:pdf_scanner/src/core/mixins/after_layout_mixin.dart';
 import 'package:pdf_scanner/src/core/router/router.dart';
 import 'package:pdf_scanner/src/core/services/is_first_launch.dart';
-import 'package:pdf_scanner/src/core/services/rate_my_app_service.dart';
 import 'package:pdf_scanner/src/core/utils/image_paths.dart';
 
 class SplashScreenView extends StatefulWidget {
@@ -19,13 +18,11 @@ class _SplashScreenViewState extends State<SplashScreenView>
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     await Future.delayed(const Duration(seconds: 2));
-    final bool ifFirstOpening = await isFirstLaunch();
-    if (ifFirstOpening) {
-      router.go('/onboarding');
+    final String? route = await getInitialRoute();
+    if (route != null) {
+      router.go(route);
+      return;
     } else {
-      Future.delayed(const Duration(seconds: 2), () {
-        RateMyAppService.maybeShowRateDialog(context);
-      });
       router.go('/documents');
     }
   }

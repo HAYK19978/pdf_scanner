@@ -22,5 +22,9 @@
   "{pdf_scanner}_cancel": "Отмена",
   "{pdf_scanner}_do_you_like_app": "Вам нравится приложение?",
   "{pdf_scanner}_tap_to_rate": "Нажмите на звезду, чтобы оценить в App Store.",
-  "{pdf_scanner}_not_now": "Не сейчас"
+  "{pdf_scanner}_not_now": "Не сейчас",
+  "{pdf_scanner}_pdf_scanner": "Сканер PDF",
+  "{pdf_scanner}_easaly_scan": "Легко сканируйте документы\nили конвертируйте их в PDF",
+  "{pdf_scanner}_rate_us": "Оцените нас",
+  "{pdf_scanner}_help_us": "Помогите нам стать лучше\nс помощью вашего отзыва"
 }

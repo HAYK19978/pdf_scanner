@@ -1,12 +1,14 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<bool> isFirstLaunch() async {
+Future<String?> getInitialRoute() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  final bool isFirst = prefs.getBool('is_first_launch') ?? true;
+  int launchCount = prefs.getInt('launch_count') ?? 0;
 
-  if (isFirst) {
-    await prefs.setBool('is_first_launch', false);
-  }
+  launchCount++;
+  await prefs.setInt('launch_count', launchCount);
 
-  return isFirst;
+  if (launchCount == 1) return '/onboarding';
+  if (launchCount == 2) return '/rateMyApp';
+
+  return null;
 }

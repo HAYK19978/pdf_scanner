@@ -4,7 +4,6 @@ import 'package:pdf_scanner/src/core/presentation/custom_scaffold.dart';
 class OnboardingView extends StatelessWidget {
   final PageController _controller = PageController();
 
-  // ignore: library_private_types_in_public_api
   final List<_OnboardingData> pages = <_OnboardingData>[
     _OnboardingData(
       title: 'PDF Scanner',
@@ -22,8 +21,8 @@ class OnboardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScafold(
-      body: PageView.builder(
+    return CustomScaffold(
+      child: PageView.builder(
         controller: _controller,
         itemCount: pages.length,
         itemBuilder: (BuildContext context, int index) {

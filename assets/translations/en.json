@@ -22,6 +22,10 @@
     "{pdf_scanner}_cancel": "Cancel",
     "{pdf_scanner}_do_you_like_app": "Enjoying Mobile App?",
     "{pdf_scanner}_tap_to_rate": "Tap a star to rate it on the App Store.",
-    "{pdf_scanner}_not_now": "Not now"
+    "{pdf_scanner}_not_now": "Not now",
+    "{pdf_scanner}_pdf_scanner":"PDF Scanner",
+    "{pdf_scanner}_easaly_scan":"Easily scan documents\nor convert them to PDF",
+    "{pdf_scanner}_rate_us":"Rate Us",
+    "{pdf_scanner}_help_us":"Help us improve with\nyour feedback"
     }
   
